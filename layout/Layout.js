@@ -1,5 +1,9 @@
 import React from 'react';
 import {Container, Nav, Navbar} from "react-bootstrap";
+import {faCoffee, faUser} from '@fortawesome/free-solid-svg-icons'
+import {faTachometerAlt} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 function Layout({children}) {
     return (
@@ -10,8 +14,24 @@ function Layout({children}) {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Dashboard</Nav.Link>
-                            <Nav.Link href="#link">Link</Nav.Link>
+                            <Nav.Link className="text-center" >
+                            <Link href="/">
+                                <div className="nav-item-div">
+                                <FontAwesomeIcon icon={faTachometerAlt} />
+                                    Dashboard
+                            </div>
+
+                            </Link>
+                            </Nav.Link>
+
+                            <Nav.Link className="text-center" >
+                            <Link href="/user">
+                                <div className="nav-item-div">
+                                    <FontAwesomeIcon icon={faTachometerAlt} />
+                                    User
+                                </div>
+                            </Link>
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
